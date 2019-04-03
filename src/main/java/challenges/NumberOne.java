@@ -18,7 +18,16 @@ public class NumberOne {
      * @return an array with two values in it, the indices from the array numbers for the two numbers that sum to target
      */
     public int[] findTwoValuesThatSumToTarget(int[] numbers, int target) {
-        // Delete the line below and implement the method!
-        throw new UnsupportedOperationException();
+        int [] targetIndexes = new int [2];
+        for(int i = 0; i < numbers.length; i++){
+            for (int j = 0; i < numbers.length; i++){
+                if (numbers[i] + numbers[j] == target){
+                    targetIndexes[0] = i;
+                    targetIndexes[1] = j;
+            }
+        }
+
+    }
+        return targetIndexes;
     }
 }
