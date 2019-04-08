@@ -22,19 +22,38 @@ public class NumberTwo {
      * @return true if the numbers are evenly spaced, otherwise false
      */
     public boolean evenlySpaced(int a, int b, int c){
-        int difference = b - a;
-        boolean result = false;
+    int small = a;
+    int medium = b;
+    int large = c;
+    int difference =0;
 
-            if(a + difference == b || a - difference == b){
-            result = true;
+        if(b < a && b < c) {
+            small = b;
+            if (a < c) {
+                medium = a;
+                large = c;
             }
-
-            else if(b + difference == c || b - difference == c){
-                result = true;
+            if (c < a) {
+                medium = c;
+                large = a;
             }
+        }
+        if(c < a && c < b){
+            small = c;
+            if(a < b){
+                medium = a;
+                large = b;
+            }
+            if(b < a){
+                medium = b;
+                large = a;
+            }
+        }
+        difference= medium - small;
+        if(large - medium == difference)
+            return true;
 
-            //thingy for c
 
-        return result;
+        return false;
     }
 }
