@@ -15,7 +15,12 @@ public class NumberFour {
     public int[] leftRotation(int[] input, int rotations) {
         int[] result = new int[input.length];
         for (int i = 0; i < input.length; i++) {
-            result[(i + (input.length - 2)) % input.length] = input[i];
+            rotations = rotations % input.length;
+            if (i - rotations < 0) {
+                result[i + (input.length - rotations)] =input[i];
+            } else {
+                result[i - rotations] = input[i];
+            }
         }
         return result;
     }
