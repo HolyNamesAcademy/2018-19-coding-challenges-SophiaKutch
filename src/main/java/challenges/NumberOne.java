@@ -18,16 +18,16 @@ public class NumberOne {
      * @return an array with two values in it, the indices from the array numbers for the two numbers that sum to target
      */
     public int[] findTwoValuesThatSumToTarget(int[] numbers, int target) {
-        int [] targetIndexes = new int [2];
-        for(int i = 0; i < numbers.length; i++){
-            for (int j = 0; i < numbers.length; i++){
-                if (numbers[i] + numbers[j] == target){
-                    targetIndexes[0] = i - 1;
-                    targetIndexes[1] = j + 1;
+    int [] twoValues = new int [2];
+    for(int i = 0; i < numbers.length; i++){
+        for(int j = 0; j < numbers.length; j++){
+            if(numbers[i] + numbers[j] == target){
+                twoValues[0] = i - 1;
+                twoValues[1] = j + 1;
+
             }
         }
-
     }
-        return targetIndexes;
+    return twoValues;
     }
 }

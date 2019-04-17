@@ -26,7 +26,17 @@ public class NumberSix {
      * @return the data contents of the list printed in a String with each number separated by a space
      */
     public String printLinkedList(LinkedListNode head) {
-        // Delete the line below and implement the method!
-        throw new UnsupportedOperationException();
+        String result = "";
+        LinkedListNode current = head;
+
+        while(current != null){
+            result += current.getData();
+
+            if(current.getNext() != null){
+                result += " ";
+            }
+            current = current.getNext();
+        }
+        return result;
     }
 }
